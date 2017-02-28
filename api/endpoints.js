@@ -15,14 +15,14 @@
   });
 
   module.exports = {
-    catalogueUrl:  util.format("http://catalogue%s", domain),
-    tagsUrl:       util.format("http://catalogue%s/tags", domain),
-    cartsUrl:      util.format("http://cart%s/carts", domain),
-    ordersUrl:     util.format("http://orders%s", domain),
-    customersUrl:  util.format("http://user%s/customers", domain),
-    addressUrl:    util.format("http://user%s/addresses", domain),
-    cardsUrl:      util.format("http://user%s/cards", domain),
-    loginUrl:      util.format("http://user%s/login", domain),
-    registerUrl:   util.format("http://user%s/register", domain),
+    catalogueUrl:  util.format("http://%s", process.env.CATALOG_URL),
+    tagsUrl:       util.format("http://%s/tags", process.env.CATALOG_URL),
+    cartsUrl:      util.format("http://%s/carts", process.env.CART_URL),
+    ordersUrl:     util.format("http://%s", process.env.ORDER_URL),
+    customersUrl:  util.format("http://%s/customers", process.env.USER_URL),
+    addressUrl:    util.format("http://%s/addresses", process.env.USER_URL),
+    cardsUrl:      util.format("http://%s/cards", process.env.USER_URL),
+    loginUrl:      util.format("http://%s/login", process.env.USER_URL),
+    registerUrl:   util.format("http://%s/register", process.env.USER_URL),
   };
 }());
