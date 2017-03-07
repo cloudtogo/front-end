@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.3
+FROM mhart/alpine-node:6.10
 ENV NODE_ENV "production"
 ENV PORT 8079
 EXPOSE 8079
