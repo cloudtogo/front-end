@@ -218,6 +218,12 @@ _________________________________________________________ -->
             $("#thumbs").append(thumbHtml);
             $("#description").text(data.description);
 
+            $.getJSON ('/comment/' + id, function (data) {
+                for (var i = 0; i < data.comments.length; i++) {
+                    <h4> data.comments[i].user + ":" + data.comments[i].comment </h4> 
+                } 
+            }
+
             $.getJSON('/catalogue', {sort: "id", size: 3, tags: data.tag[0]}, function (data) {
                 if (data != null) {
                     $.each(data, function (index, element) {
