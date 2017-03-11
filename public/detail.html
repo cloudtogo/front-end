@@ -224,7 +224,7 @@ _________________________________________________________ -->
                 for (var i = 0; i < data.comments.length; i++) {
                     $("#commentDetails").append($("<h4/>").html(data.comments[i].user + ":" + data.comments[i].comment));
                 } 
-            }
+            });
 
             $.getJSON('/catalogue', {sort: "id", size: 3, tags: data.tag[0]}, function (data) {
                 if (data != null) {
