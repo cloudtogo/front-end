@@ -150,6 +150,8 @@
                         </p>
                     </div>
                 </div>
+                
+                <div id="commentDetails"></div>
 
                 <div class="row same-height-row">
                     <div class="col-md-3 col-sm-6">
@@ -220,7 +222,7 @@ _________________________________________________________ -->
 
             $.getJSON ('/comment/' + id, function (data) {
                 for (var i = 0; i < data.comments.length; i++) {
-                    <h4> data.comments[i].user + ":" + data.comments[i].comment </h4> 
+                    $("#commentDetails").append($("<h4/>").html(data.comments[i].user + ":" + data.comments[i].comment));
                 } 
             }
 
