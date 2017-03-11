@@ -151,7 +151,18 @@
                     </div>
                 </div>
                 
-                <div id="commentDetails"></div>
+                <div class="box">
+                    <div id="commentDetails"></div>
+                    <div style="border-top: 1px solid #ddd; padding-top: 20px;">
+                        <h4>Please enter comments:</h4>
+                        <textarea id="comment_content" class="form-control" rows="4"></textarea>
+                        <div style="text-align: right;">
+                            <a id="comment_addBtn" href="javascript:void(0);" class="btn btn-primary navbar-btn">
+                                <span class="hidden-sm">Submit</span>
+                            </a>
+                        <div>
+                    </div>
+                </div>
 
                 <div class="row same-height-row">
                     <div class="col-md-3 col-sm-6">
@@ -220,11 +231,7 @@ _________________________________________________________ -->
             $("#thumbs").append(thumbHtml);
             $("#description").text(data.description);
 
-            $.getJSON ('/comment/' + id, function (data) {
-                for (var i = 0; i < data.comments.length; i++) {
-                    $("#commentDetails").append($("<h4/>").html(data.comments[i].user + ":" + data.comments[i].comment));
-                } 
-            });
+            loadComment();
 
             $.getJSON('/catalogue', {sort: "id", size: 3, tags: data.tag[0]}, function (data) {
                 if (data != null) {
@@ -262,11 +269,23 @@ _________________________________________________________ -->
                 }
             });
         });
-
-
-
-
-
+        
+        $("#comment_addBtn").click(function(){
+            alert("content: " + $("#comment_content").val());
+            loadComment();
+        });
+        
+        function loadComment(){
+            $.getJSON ('/comment/' + id, function (data) {
+                $("#commentDetails").empty();
+                for (var i = 0; i < data.comments.length; i++) {
+                    var $blockquote = $('<blockquote/>');
+                    $blockquote.append($('<h4 style="font-weight:bold;"/>').html(data.comments[i].user))
+                        .append($('<p/>').html(data.comments[i].comment));
+                    $("#commentDetails").append($blockquote);
+                } 
+            });
+        }
 
     });
 
