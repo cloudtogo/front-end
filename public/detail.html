@@ -153,9 +153,26 @@
                 
                 <div class="box">
                     <div id="commentDetails"></div>
-                    <div style="border-top: 1px solid #ddd; padding-top: 20px;">
-                        <h4>Please enter comments:</h4>
-                        <textarea id="comment_content" class="form-control" rows="4"></textarea>
+					<div style="border-top: 1px solid #ddd; padding-top: 20px;">
+                        <form class="form-horizontal">
+	                        <div class="form-group">
+	                        	<div class="col-sm-12">
+	                        		<h4>Please enter comments:</h4>
+	                        	</div>
+	                        </div>
+	                        <div class="form-group">
+	                        	<label for="comment_nickname" class="col-sm-2 control-label" style="width:auto;">Nickname:</label>
+	                        	<div class="col-sm-10">
+	                        		<input type="text" class="form-control" id="comment_nickname" style="max-width:240px;">
+	                        	</div>
+	                        </div>
+	                        <div class="form-group">
+	                        	<div class="col-sm-12">
+                                    <textarea id="comment_content" class="form-control" rows="4"></textarea>
+	                        	</div>
+	                        </div>
+                        </form>
+                        
                         <div style="text-align: right;">
                             <a id="comment_addBtn" href="javascript:void(0);" class="btn btn-primary navbar-btn">
                                 <span class="hidden-sm">Submit</span>
@@ -271,7 +288,7 @@ _________________________________________________________ -->
         });
         
         $("#comment_addBtn").click(function(){
-            alert("content: " + $("#comment_content").val());
+            alert("nickname = " + $("#comment_nickname").val() + ";   content: " + $("#comment_content").val());
             loadComment();
         });
         
