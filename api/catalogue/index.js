@@ -22,5 +22,8 @@
     helpers.simpleHttpRequest(endpoints.tagsUrl, res, next);
   });
 
+  app.get("/comment*", function (req, res, next) {
+    helpers.simpleHttpRequest(endpoints.commentUrl + req.url.toString(), res, next);
+  });
   module.exports = app;
 }());

@@ -24,5 +24,6 @@
     cardsUrl:      util.format("http://%s/cards", process.env.USER_URL),
     loginUrl:      util.format("http://%s/login", process.env.USER_URL),
     registerUrl:   util.format("http://%s/register", process.env.USER_URL),
+    commentUrl:    util.format("http://%s", process.env.COMMENT_URL),
   };
 }());
