@@ -320,7 +320,7 @@ _________________________________________________________ -->
 			type: 'PUT',
 			url: '/comment/' + id,
 			dataType:'json',
-			data: {user:$("#comment_nickname").val(), comment:$("#comment_content").val()},
+			data: JSON.stringify({user:$("#comment_nickname").val(), comment:$("#comment_content").val()}),
 			success: function(data){
 				console.log("success: ", data);
 				loadComment();
