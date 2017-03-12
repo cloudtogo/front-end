@@ -322,8 +322,7 @@ _________________________________________________________ -->
 			dataType:'json',
 			data: JSON.stringify({user:$("#comment_nickname").val(), comment:$("#comment_content").val()}),
 			success: function(data){
-				$("#comment_nickname").val("");
-				$("#comment_content").val("");
+				$("#comment_nickname, #comment_content").val("");
 				console.log("success: ", data);
 				loadComment();
 			},
