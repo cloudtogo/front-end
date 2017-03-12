@@ -1,4 +1,4 @@
-FROM node:4-alpine
+FROM registry.cn-beijing.aliyuncs.com/ctgpub/alpine-node:4
 
 ENV PORT 8079
 EXPOSE 8079
